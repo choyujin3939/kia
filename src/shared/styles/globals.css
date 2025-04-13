@@ -1,3 +1,16 @@
+/*
+ * File       : globals.css
+ *
+ * SUMMARY:
+ * GLOBALS
+ * COMMON
+ */
+
+/* **************************************** *
+ * GLOBALS
+ * RESET
+ * LAYOUT
+ * **************************************** */
 :root {
   --max-width: 1660px;
   --line-height-sm: 1.4;
@@ -10,7 +23,7 @@
   --midnight-100: #cdd0d2;
   --red: #ff0900;
   --blue: #4296e4;
-  --black-300: #9BA1A5;
+  --black-300: #9ba1a5;
   --gray-700: #37434c;
   --gray-500: #697278;
   --gray-400: #82898f;
@@ -265,10 +278,9 @@
   }
 }
 
-body {
-  /*font-family: 'KiaSignature', sans-serif;*/
-}
-
+/* **************************************** *
+ * RESET
+ * **************************************** */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -290,4 +302,32 @@ ol,
 ul,
 li {
   list-style: none;
+}
+
+button,
+input {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+address,
+em,
+i {
+  font-style: normal;
+}
+
+/* **************************************** *
+ * LAYOUT
+ * **************************************** */
+body.nav-opened {
+  overflow: hidden;
+}
+
+.container {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  overflow: hidden;
+  padding: 0 var(--side-padding) var(--bottom-padding);
 }

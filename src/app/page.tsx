@@ -1,11 +1,8 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import {Metadata} from "next";
+import { Metadata } from 'next';
+import Image from 'next/image';
+
+import styles from './layout.styles';
 
 export default function Home() {
-  return (
-    <div>
-      1234
-    </div>
-  );
+  return <div>home</div>;
 }

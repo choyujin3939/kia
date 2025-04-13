@@ -1,4 +1,7 @@
+import FAQ from '@/app/_components/faq';
 
-export default function Faq() {
-  return "자주 묻는 질문"
+export default function Page() {
+  return (
+    <FAQ />
+  )
 }
