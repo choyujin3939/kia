@@ -6,20 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mock": "npx tsx watch ./src/mocks/http.ts"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@tanstack/react-query": "^5.72.2",
+    "axios": "^1.8.4",
+    "html-react-parser": "^5.2.3",
     "next": "15.3.0",
     "postcss-syntax": "^0.36.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.55.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@mswjs/http-middleware": "^0.10.3",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@svgr/webpack": "^8.1.0",
@@ -30,8 +33,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cors": "^2.8.5",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.0",
     "express": "^5.1.0",
     "msw": "^2.7.3",
     "postcss": "^8.5.3",

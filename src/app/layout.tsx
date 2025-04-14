@@ -1,8 +1,9 @@
-import "@/shared/styles/globals.css";
-import { kiaFont } from "@/shared/styles/font";
+import "@/style/globals.css";
+import { kiaFont } from "@/style/font";
 import RQProvider from "@/app/RQProvider";
-import Header from "@/app/_components/header";
-import Footer from "@/app/_components/footer";
+import Header from "@/component/header";
+import Footer from "@/component/footer";
+import { MSWComponent } from "@/component/MSWComponent";
 
 // export const metadata = {
 //   title: "기아 비즈(Kia Biz) - 친환경 모빌리티 서비스",
@@ -23,11 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={kiaFont.variable}>
       <body className={kiaFont.className}>
+        <MSWComponent />
         <RQProvider>
           <Header />
-          <main className="container">
-            {children}
-          </main>
+          <main className="container">{children}</main>
           <Footer />
         </RQProvider>
       </body>

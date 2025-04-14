@@ -1,5 +1,5 @@
-import { theme } from '@/shared/styles/theme';
-import { css } from '@emotion/react';
+import { theme } from "@/style/theme";
+import { css } from "@emotion/react";
 
 export const styles = {
   header: css`
@@ -104,7 +104,12 @@ export const styles = {
       margin-right: -8px;
       font-size: 0;
       background-color: transparent;
-      background-image: linear-gradient(transparent 9px, #000 9px, #000 11px, transparent 11px);
+      background-image: linear-gradient(
+        transparent 9px,
+        #000 9px,
+        #000 11px,
+        transparent 11px
+      );
       background-repeat: no-repeat;
       background-position: 0;
       border: 10px solid transparent;
@@ -112,7 +117,7 @@ export const styles = {
 
       &::before,
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         width: 100%;

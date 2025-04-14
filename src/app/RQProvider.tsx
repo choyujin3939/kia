@@ -1,6 +1,6 @@
 'use client';
 
-import { QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 
 function RQProvider({ children }: React.PropsWithChildren) {
@@ -12,7 +12,7 @@ function RQProvider({ children }: React.PropsWithChildren) {
             refetchOnWindowFocus: false,
             retryOnMount: true,
             refetchOnReconnect: false,
-            retry: false,
+            retry: 1,
           },
         },
       })

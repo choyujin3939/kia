@@ -1,5 +1,5 @@
-import { breakpoints, media, theme } from '@/shared/styles/theme';
-import { css } from '@emotion/react';
+import { media } from "@/style/theme";
+import { css } from "@emotion/react";
 
 export const styles = {
   footer: css`
