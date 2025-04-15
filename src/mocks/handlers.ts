@@ -18,8 +18,7 @@ export const handlers = [
     const faqCategoryID = url.searchParams.get("faqCategoryID");
     const question = url.searchParams.get("question");
 
-    const categoryMap =
-      response.category[tab as keyof typeof response.category];
+    const categoryMap = response.category[tab as keyof typeof response.category];
     if (!categoryMap) {
       return HttpResponse.json({ pageInfo: {}, items: [] });
     }
@@ -27,20 +26,16 @@ export const handlers = [
     const allItems = response.faq.items;
 
     const subCategoryName = faqCategoryID
-      ? categoryMap.find((item) => item.categoryID === faqCategoryID)?.name
+      ? categoryMap.find(item => item.categoryID === faqCategoryID)?.name
       : undefined;
 
-    const filtered = allItems.filter((item) => {
-      const compareField =
-        tab === "CONSULT" ? "subCategoryName" : "categoryName";
-      const categoryNames = Object.values(categoryMap).map(
-        (category) => category.name,
-      );
+    const filtered = allItems.filter(item => {
+      const compareField = tab === "CONSULT" ? "subCategoryName" : "categoryName";
+      const categoryNames = Object.values(categoryMap).map(category => category.name);
 
       const isInTab = categoryNames.includes(item[compareField]);
 
-      const isInSubTab =
-        !faqCategoryID || item[compareField] === subCategoryName;
+      const isInSubTab = !faqCategoryID || item[compareField] === subCategoryName;
 
       const isMatchQuestion = !question || item.question.includes(question);
 

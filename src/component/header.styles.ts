@@ -104,12 +104,7 @@ export const styles = {
       margin-right: -8px;
       font-size: 0;
       background-color: transparent;
-      background-image: linear-gradient(
-        transparent 9px,
-        #000 9px,
-        #000 11px,
-        transparent 11px
-      );
+      background-image: linear-gradient(transparent 9px, #000 9px, #000 11px, transparent 11px);
       background-repeat: no-repeat;
       background-position: 0;
       border: 10px solid transparent;

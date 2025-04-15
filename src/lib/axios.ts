@@ -9,21 +9,21 @@ const axiosConfig: AxiosRequestConfig = {
 const axiosInstance = axios.create(axiosConfig);
 
 axiosInstance.interceptors.request.use(
-  async (request) => {
+  async request => {
     return request;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
-  },
+  }
 );
 
 axiosInstance.interceptors.response.use(
-  (response) => {
+  response => {
     return response;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
-  },
+  }
 );
 
 export default axiosInstance;
@@ -40,9 +40,7 @@ export default axiosInstance;
 //   }
 // };
 
-export const fetcher = async <T = any>(
-  args: string | [string, AxiosRequestConfig],
-): Promise<T> => {
+export const fetcher = async <T = any>(args: string | [string, AxiosRequestConfig]): Promise<T> => {
   try {
     const [url, config] = Array.isArray(args) ? args : [args];
 

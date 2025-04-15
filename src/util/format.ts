@@ -4,7 +4,7 @@ type Option = {
 };
 
 export const setFormatQueryString = (
-  params: Record<string, string | number | boolean | null | undefined>,
+  params: Record<string, string | number | boolean | null | undefined>
 ) => {
   const queryParams: string[] = [];
 
@@ -21,7 +21,7 @@ export const setFormatQueryString = (
 export function convertToLabelValue<T extends Record<string, string | number>>(
   list: T[],
   labelKey: keyof T,
-  valueKey: keyof T,
+  valueKey: keyof T
 ): Option[] {
   const allItem = [
     {
@@ -30,7 +30,7 @@ export function convertToLabelValue<T extends Record<string, string | number>>(
     },
   ];
   const items =
-    list?.map((item) => ({
+    list?.map(item => ({
       label: String(item[labelKey]),
       value: String(item[valueKey]),
     })) ?? [];

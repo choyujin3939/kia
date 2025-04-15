@@ -26,34 +26,25 @@ const Header = () => {
       <nav css={styles.nav} className="mobile-nav">
         <ul>
           <li>
-            <Link
-              className={segment === "Guide" ? "active" : undefined}
-              href="/Guide"
-            >
+            <Link className={segment === "Guide" ? "active" : undefined} href="/Guide">
               서비스 소개
             </Link>
           </li>
           <li>
             <Link
               className={segment === "FAQ" ? "active" : undefined}
-              href="/src/app/FAQ/_component/faq"
+              href="/src/app/FAQ/component/faq"
             >
               자주 묻는 질문
             </Link>
           </li>
           <li>
-            <Link
-              className={segment === "News" ? "active" : undefined}
-              href="/News"
-            >
+            <Link className={segment === "News" ? "active" : undefined} href="/News">
               새소식
             </Link>
           </li>
           <li>
-            <Link
-              className={segment === "Counsel" ? "active" : undefined}
-              href="/Counsel"
-            >
+            <Link className={segment === "Counsel" ? "active" : undefined} href="/Counsel">
               상담문의
             </Link>
           </li>

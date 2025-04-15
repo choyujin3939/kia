@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export const useViewport = () => {
   const [viewport, setViewport] = useState({

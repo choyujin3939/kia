@@ -1,5 +1,5 @@
 /** @type {import("prettier").Config} */
-module.exports = {
+export default {
   singleQuote: false,
   semi: true,
   trailingComma: "es5",
@@ -8,7 +8,6 @@ module.exports = {
   bracketSpacing: true,
   arrowParens: "avoid",
   endOfLine: "auto",
-
   importOrder: ["^react", "^next", "^[a-z]", "^@", "^[./]"],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,

@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "mock": "npx tsx watch ./src/mocks/http.ts"
+    "mock": "npx tsx watch ./src/mocks/http.ts",
+    "prettier:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
+    "prettier:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -17,14 +18,12 @@
     "axios": "^1.8.4",
     "html-react-parser": "^5.2.3",
     "next": "15.3.0",
-    "postcss-syntax": "^0.36.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0"
   },
   "devDependencies": {
     "@mswjs/http-middleware": "^0.10.3",
-    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@svgr/webpack": "^8.1.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/cors": "^2.8.17",
@@ -32,16 +31,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "msw": "^2.7.3",
     "postcss": "^8.5.3",
+    "postcss-syntax": "^0.36.2",
     "prettier": "^3.5.3",
     "prettier-plugin-import-sort": "^0.0.7",
-    "stylelint": "^16.18.0",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard": "^38.0.0",
-    "stylelint-order": "^6.0.4",
     "typescript": "^5"
   },
   "msw": {

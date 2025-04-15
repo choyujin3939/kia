@@ -38,15 +38,13 @@ const useFaqList = (queryKey: string, params: TFaqParams) => {
       return fetcher(["/api/faq", config]);
     },
     initialPageParam: 0,
-    getNextPageParam: (lastPage) => {
+    getNextPageParam: lastPage => {
       return lastPage.pageInfo.nextOffset !== lastPage.pageInfo.offset
         ? lastPage.pageInfo.nextOffset
         : undefined;
     },
-    getPreviousPageParam: (firstPage) => {
-      return firstPage.pageInfo.offset > 0
-        ? firstPage.pageInfo.prevOffset
-        : undefined;
+    getPreviousPageParam: firstPage => {
+      return firstPage.pageInfo.offset > 0 ? firstPage.pageInfo.prevOffset : undefined;
     },
     gcTime: 0,
   });
