@@ -1,23 +1,16 @@
 import { media } from "@/style/theme";
 import { css } from "@emotion/react";
 
-export const styles = {
-  footer: css`
-    --font-md: 14px;
-    --font-lg: 16px;
-    --line-height: 24px;
+export const footer = css`
+  --font-md: 14px;
+  --font-lg: 16px;
+  --line-height: 24px;
 
-    background-color: var(--midnight-900);
-    color: var(--gray-400);
+  position: relative;
+  background-color: var(--midnight-900);
+  color: var(--gray-400);
 
-    ${media.max.tablet} {
-      --font-md: 12px;
-      --font-lg: 14px;
-      --line-height: 22px;
-    }
-  `,
-
-  inner: css`
+  .inner {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,49 +21,55 @@ export const styles = {
     font-size: var(--font-md);
     line-height: var(--line-height);
     position: relative;
+  }
 
-    ${media.max.tablet} {
+  ${media.max.tablet} {
+    --font-md: 12px;
+    --font-lg: 14px;
+    --line-height: 22px;
+
+    .inner {
       flex-direction: column;
       align-items: flex-start;
       gap: 22px;
       padding: 34px var(--side-padding) 44px;
     }
+  }
 
-    ${media.max.mobile} {
+  ${media.max.mobile} {
+    .inner {
       padding: 18px var(--side-padding) 29px;
     }
-  `,
+  }
+`;
+export const copyright = css`
+  word-break: break-all;
 
-  copyright: css`
-    word-break: break-all;
-
-    ${media.min.tablet} {
-      order: 1;
-    }
-  `,
-
-  logo: css`
+  .logo {
     display: block;
     height: 56px;
+  }
 
-    ${media.min.mobile} {
+  ${media.min.tablet} {
+    order: 1;
+  }
+
+  ${media.min.mobile} {
+    .logo {
       height: 48px;
     }
+  }
 
-    ${media.max.mobile} {
+  ${media.max.mobile} {
+    .logo {
       height: 32px;
     }
-  `,
+  }
+`;
+export const information = css`
+  flex: 1;
 
-  information: css`
-    flex: 1;
-
-    ${media.min.tablet} {
-      order: 2;
-    }
-  `,
-
-  utils: css`
+  .utils {
     display: flex;
     justify-content: flex-end;
     gap: 24px;
@@ -80,24 +79,10 @@ export const styles = {
       font-size: var(--font-lg);
       line-height: var(--line-height);
       color: #fff;
-
-      ${media.max.tablet} {
-        line-height: 52px;
-      }
-
-      ${media.max.mobile} {
-        line-height: 48px;
-      }
     }
+  }
 
-    ${media.max.tablet} {
-      justify-content: flex-start;
-      gap: 16px;
-      margin-bottom: 0;
-    }
-  `,
-
-  address: css`
+  .address {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -111,8 +96,24 @@ export const styles = {
     br {
       display: none;
     }
+  }
 
-    ${media.max.tablet} {
+  ${media.min.tablet} {
+    order: 2;
+  }
+
+  ${media.max.tablet} {
+    .utils {
+      justify-content: flex-start;
+      gap: 16px;
+      margin-bottom: 0;
+
+      button {
+        line-height: 52px;
+      }
+    }
+
+    .address {
       display: block;
 
       span {
@@ -123,11 +124,24 @@ export const styles = {
         display: block;
       }
     }
+  }
 
-    ${media.max.mobile} {
+  ${media.max.mobile} {
+    .utils button {
+      line-height: 48px;
+    }
+    .address {
       & br:not(:last-of-type) {
         display: block;
       }
     }
-  `,
+  }
+`;
+
+const footerStyles = {
+  footer,
+  copyright,
+  information,
 };
+
+export default footerStyles;

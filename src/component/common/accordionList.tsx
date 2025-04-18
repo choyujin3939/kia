@@ -1,5 +1,5 @@
-import { styles } from "@/app/FAQ/component/faq.styles";
-import { AccordionItem } from "@/app/FAQ/component/accordionItem";
+import { accordion, moreButton, styles } from "@/component/pages/faq.styles";
+import { AccordionItem } from "@/component/common/accordionItem";
 import { useState } from "react";
 
 export interface IFaqItem {
@@ -29,11 +29,9 @@ export const AccordionList = ({
     setOpenIndex(prev => (prev === index ? null : index));
   };
 
-  if (faqItems.length === 0) return null;
-
   return (
     <div>
-      <ul css={styles.accordion}>
+      <ul css={accordion}>
         {faqItems.map((item, index) => (
           <AccordionItem
             key={item.question + index}
@@ -45,7 +43,7 @@ export const AccordionList = ({
       </ul>
       {hasNextFaqList && (
         <button
-          css={styles.more}
+          css={moreButton}
           type="button"
           onClick={fetchNextFaqList}
           disabled={isLoadingNextFaqList}

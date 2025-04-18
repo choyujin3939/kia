@@ -3,14 +3,13 @@
  *
  * SUMMARY:
  * GLOBALS
+ * RESET
  * COMMON
  * CONTROL
  */
 
 /* **************************************** *
  * GLOBALS
- * RESET
- * LAYOUT
  * **************************************** */
 :root {
   --max-width: 1660px;
@@ -291,7 +290,6 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 a {
@@ -328,7 +326,12 @@ body.nav-opened {
 .container {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   overflow: hidden;
-  padding: 0 var(--side-padding) var(--bottom-padding);
+  padding: var(--header-height) var(--side-padding) var(--bottom-padding);
+}
+
+.container .content {
+  margin: 0 auto;
+  max-width: 1240px;
 }
 
 /* **************************************** *

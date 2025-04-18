@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetcher } from "@/lib/axios";
+import { fetcher } from "@/lib/client/axios";
 import { setFormatQueryString } from "@/util/format";
 
 export type TFaqCategoryParams = {

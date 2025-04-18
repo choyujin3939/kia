@@ -1,12 +1,10 @@
-import { FC } from "react";
 import parse from "html-react-parser";
 import ArrowIcon from "@/asset/images/ic_arrow.svg";
-import { styles } from "@/app/FAQ/component/faq.styles";
 
 interface FaqItemProps {
   id: string;
-  categoryName: string;
-  subCategoryName: string;
+  categoryName?: string;
+  subCategoryName?: string;
   question: string;
   answer: string;
   isOpen: boolean;
@@ -23,17 +21,17 @@ export const AccordionItem = ({
   onToggle,
 }: FaqItemProps) => {
   return (
-    <li css={styles.accordionItem} className="accordion" key={id + question}>
-      <h3 css={[styles.summary]} className={`${isOpen ? "open" : ""}`} onClick={onToggle}>
-        <em>{categoryName}</em>
-        <em>{subCategoryName}</em>
-        <strong>{question}</strong>
+    <li className="accordionItem" key={id + question}>
+      <div className={`summary ${isOpen ? "open" : ""}`} onClick={onToggle}>
+        {categoryName && <em className="category">{categoryName}</em>}
+        <em className="sub">{subCategoryName}</em>
+        <strong className="subject">{question}</strong>
         <div className="icon">
           <ArrowIcon />
         </div>
-      </h3>
+      </div>
       {isOpen && (
-        <div css={styles.details} className={isOpen ? "open" : ""}>
+        <div className={`details ${isOpen ? "open" : ""}`}>
           <div className="inner">{answer && parse(answer)}</div>
         </div>
       )}

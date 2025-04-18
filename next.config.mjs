@@ -19,12 +19,20 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  webpack: (config, context) => {
+  webpack(config) {
     config.module.rules.push({
-      test: /\.svg$/i,
-      use: ["@svgr/webpack"],
+      test: /\.svg$/,
+      issuer: /\.[jt]sx?$/,
+      oneOf: [
+        {
+          resourceQuery: /url/,
+          type: 'asset/resource',
+        },
+        {
+          use: ['@svgr/webpack'],
+        },
+      ],
     });
-
     return config;
   },
   redirects: async () => {

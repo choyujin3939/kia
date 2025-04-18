@@ -1,21 +1,20 @@
 "use client";
 
-import { css } from "@emotion/react";
-import { styles } from "@/component/fotter.styles";
+import footerStyles from "@/component/common/footer.styles";
 import Logo from "@/asset/images/logo_kia.svg";
 
 const Footer = () => {
   return (
-    <footer css={styles.footer}>
-      <div css={styles.inner}>
-        <div css={styles.information}>
-          <div css={styles.utils}>
+    <footer css={footerStyles.footer}>
+      <div className="inner">
+        <div css={footerStyles.information}>
+          <div className="utils">
             <button type="button">
               <b>개인정보 처리방침</b>
             </button>
             <button type="button">이용약관</button>
           </div>
-          <address css={styles.address}>
+          <address className="address">
             <span>
               서울특별시 서초구 헌릉로 12 <em>기아㈜</em>
             </span>
@@ -41,8 +40,8 @@ const Footer = () => {
             </span>
           </address>
         </div>
-        <div css={styles.copyright}>
-          <Logo css={styles.logo} />© 2023 KIA CORP. All Rights Reserved.
+        <div css={footerStyles.copyright}>
+          <Logo className="logo" />© 2023 KIA CORP. All Rights Reserved.
         </div>
       </div>
     </footer>

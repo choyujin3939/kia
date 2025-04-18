@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { fetcher } from "@/lib/axios";
+import { fetcher } from "@/lib/client/axios";
 
 export type TFaqParams = {
   limit?: number;

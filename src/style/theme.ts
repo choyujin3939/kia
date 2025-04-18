@@ -20,6 +20,7 @@ export const media = {
   },
   between: {
     mobileToTablet: `@media (min-width: ${breakpoints.mobile + 1}px) and (max-width: ${breakpoints.tablet - 1}px)`, // 744px ~ 1023px
+    mobileToLaptop: `@media (min-width: ${breakpoints.mobile + 1}px) and (max-width: ${breakpoints.laptop - 1}px)`, // 744px ~ 1023px
     tabletToLaptop: `@media (min-width: ${breakpoints.tablet + 1}px) and (max-width: ${breakpoints.laptop - 1}px)`, // 1025px ~ 1439px
   },
 };

@@ -1,5 +1,5 @@
 import { http, HttpResponse } from "msw";
-import response from "./response";
+import response from "../../mock";
 
 export const handlers = [
   http.get("/api/faq/category", ({ request }) => {
@@ -18,7 +18,10 @@ export const handlers = [
     const faqCategoryID = url.searchParams.get("faqCategoryID");
     const question = url.searchParams.get("question");
 
-    const categoryMap = response.category[tab as keyof typeof response.category];
+    const categoryMap = response.category[tab as keyof typeof response.category] as Array<{
+      categoryID: string;
+      name: string;
+    }>;
     if (!categoryMap) {
       return HttpResponse.json({ pageInfo: {}, items: [] });
     }
