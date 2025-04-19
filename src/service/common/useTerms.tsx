@@ -6,16 +6,16 @@ export type TTermsParams = {
   termsClassID: string;
 };
 
+export type TTerms = {
+  termsName: string;
+  termsVersion: number;
+  startDate: number;
+  endDate: number;
+  contents: string;
+};
+
 export type TTermsResponse = {
-  terms: [
-    {
-      termsName: string;
-      termsVersion: string;
-      startDate: string;
-      endDate: string;
-      contents: string;
-    },
-  ];
+  terms: TTerms[];
 };
 const fetchTerms = async (params: TTermsParams) => {
   const queryString = setFormatQueryString(params);

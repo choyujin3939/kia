@@ -1,4 +1,4 @@
-import { accordion, moreButton, styles } from "@/component/pages/faq.styles";
+import { accordion, moreButton } from "@/component/pages/faq.styles";
 import { AccordionItem } from "@/component/common/accordionItem";
 import { useState } from "react";
 
