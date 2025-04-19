@@ -21,6 +21,7 @@ import GoogleIcon from "@/asset/images/logo_googleplay.svg";
 import AppleIcon from "@/asset/images/logo_appstore.svg";
 import ArrowStepIcon from "@/asset/images/ic_step_arrow.svg";
 import Link from "next/link";
+import Dialog from "@/component/common/dialog";
 
 type TParams = {
   tab: string;

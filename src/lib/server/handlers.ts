@@ -1,5 +1,6 @@
 import { http, HttpResponse } from "msw";
 import response from "../../mock";
+import terms from "@/mock/terms.json";
 
 export const handlers = [
   http.get("/api/faq/category", ({ request }) => {
@@ -9,7 +10,13 @@ export const handlers = [
 
     return HttpResponse.json(data ?? []);
   }),
+  http.get("/api/terms", ({ request }) => {
+    const url = new URL(request.url);
+    const id = url.searchParams.get("termsClassID") ?? "";
+    const data = response.terms[id as keyof typeof response.terms];
 
+    return HttpResponse.json(data ?? []);
+  }),
   http.get("/api/faq", ({ request }) => {
     const url = new URL(request.url);
     const limit = Number(url.searchParams.get("limit") ?? "10");

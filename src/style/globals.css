@@ -348,12 +348,22 @@ textarea {
   outline: none;
 }
 
-input {
+input,
+select{
+  -webkit-appearance: none;
+  appearance: none;
   border: 1px solid #cdd0d2;
   border: 1px solid var(--gray-200);
   border-radius: 0;
   height: var(--input-md);
   padding: 0 var(--space-sm2);
+}
+
+select {
+  background:no-repeat right calc(var(--space-sm2) * .6) top 50%;
+  background-size: auto calc(var(--input-md) * .42);
+  padding-right: var(--input-md)
+
 }
 
 button {
